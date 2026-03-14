@@ -8,15 +8,16 @@ export default {
     extend: {
       colors: {
         slate: {
-          900: '#0F172A',
+          900: '#1c1c1e', // Charcoal dark
         },
         primary: {
-          DEFAULT: '#3B82F6', // Tech Blue
-          hover: '#2563EB',
+          DEFAULT: '#b87333', // Copper as primary fallback
+          hover: '#a45a1e',
         }
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
+        handwriting: ['Caveat', 'cursive'],
       }
     },
   },

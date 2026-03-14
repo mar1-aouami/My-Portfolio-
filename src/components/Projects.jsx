@@ -29,14 +29,15 @@ const Projects = () => {
   });
 
   return (
-    <section id="projects" className="py-24 bg-slate-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="py-24 relative">
+      <div className="absolute inset-0 bg-[#161616] opacity-60"></div> {/* Darker background separator */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <div className="flex flex-col md:flex-row justify-between items-end mb-16">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">The Portfolio</h2>
-            <p className="text-slate-400 mt-2 mb-4">Explore my latest projects in web development, data science, and AI</p>
-            <div className="h-1 w-20 bg-primary rounded"></div>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-rose-gold mb-4 drop-shadow-md">The Portfolio</h2>
+            <p className="text-off-white mt-2 mb-4 font-medium">Explore my latest projects in web development, data science, and AI</p>
+            <div className="h-1 w-20 bg-gradient-to-r from-[#b87333] to-transparent rounded"></div>
           </div>
         </div>
 
@@ -46,10 +47,10 @@ const Projects = () => {
             <button
               key={category}
               onClick={() => setFilter(category)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+              className={`px-5 py-2 rounded-sm text-sm font-bold tracking-wide transition-all duration-300 ${
                 filter === category
-                  ? "bg-primary text-white shadow-[0_0_15px_rgba(59,130,246,0.5)]"
-                  : "bg-transparent text-slate-400 border border-slate-700 hover:border-slate-500 hover:text-white"
+                  ? "btn-copper"
+                  : "bg-[#2b160a] text-[#d4a373] border border-[#6b3e1b] hover:bg-[#3b2211] hover:text-off-white"
               }`}
             >
               {category}
@@ -62,22 +63,22 @@ const Projects = () => {
             filteredProjects.map((project, idx) => (
               <div
                 key={idx}
-                className="group glass rounded-2xl overflow-hidden hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(59,130,246,0.15)] transition-all duration-300 flex flex-col h-full"
+                className="group btn-leather rounded-xl overflow-hidden hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 flex flex-col h-full"
               >
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-48 overflow-hidden rounded-t-lg border-b border-[#6b3e1b] z-10">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter sepia-[0.3] contrast-110"
                   />
-                  <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-transparent transition-colors"></div>
+                  <div className="absolute inset-0 bg-[#3b2211]/30 group-hover:bg-transparent transition-colors"></div>
                 </div>
                 
-                <div className="p-6 flex flex-col flex-1">
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
+                <div className="p-6 flex flex-col flex-1 relative z-10">
+                  <h3 className="text-xl font-bold text-rose-gold mb-2 group-hover:text-[#d4a373] transition-colors drop-shadow-sm">
                     {project.title}
                   </h3>
-                  <p className="text-slate-400 mb-6 flex-1 text-sm leading-relaxed">
+                  <p className="text-off-white mb-6 flex-1 text-sm leading-relaxed opacity-90">
                     {project.description}
                   </p>
                   
@@ -85,24 +86,24 @@ const Projects = () => {
                     {project.tags.map((tag, tIdx) => (
                       <span
                         key={tIdx}
-                        className="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-xs font-medium border border-slate-700"
+                        className="px-3 py-1 bg-[#1a0f08] text-[#92a88f] rounded-sm text-xs font-bold border border-[#3b2211] shadow-inner"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
                   
-                  <div className="flex items-center gap-4 mt-auto pt-4 border-t border-slate-800">
+                  <div className="flex items-center gap-4 mt-auto pt-4 border-t border-[#6b3e1b]">
                     <a
                       href={project.github}
-                      className="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors"
+                      className="flex items-center gap-2 text-sm font-bold text-[#d4a373] hover:text-rose-gold transition-colors"
                     >
                       <Github className="w-4 h-4" />
                       Code
                     </a>
                     <a
                       href={project.demo}
-                      className="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors ml-auto"
+                      className="flex items-center gap-2 text-sm font-bold text-[#d4a373] hover:text-rose-gold transition-colors ml-auto"
                     >
                       <ExternalLink className="w-4 h-4" />
                       Live Demo
@@ -113,8 +114,8 @@ const Projects = () => {
             ))
           ) : (
             <div className="col-span-full flex flex-col items-center justify-center py-12 text-center">
-              <p className="text-slate-400 text-lg">No projects added yet.</p>
-              <p className="text-slate-500 mt-2">Check back soon for updates!</p>
+              <p className="text-off-white text-lg">No projects added yet.</p>
+              <p className="text-[#d4a373] mt-2 font-handwriting text-3xl">Check back soon for updates!</p>
             </div>
           )}
         </div>

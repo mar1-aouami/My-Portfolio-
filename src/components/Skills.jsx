@@ -72,13 +72,13 @@ const Skills = () => {
   ];
 
   return (
-    <section id="resume" className="py-24 bg-slate-800/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="resume" className="py-24 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <div className="text-center md:text-left mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Resume</h2>
-          <p className="text-slate-400 mt-2 mb-4 max-w-2xl mx-auto md:mx-0">A summary of my academic journey, technical expertise, and professional certifications.</p>
-          <div className="h-1 w-20 bg-primary rounded mx-auto md:mx-0"></div>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-rose-gold mb-4 drop-shadow-md">Resume</h2>
+          <p className="text-off-white mt-2 mb-4 max-w-2xl mx-auto md:mx-0 font-medium">A summary of my academic journey, technical expertise, and professional certifications.</p>
+          <div className="h-1 w-20 bg-gradient-to-r from-[#b87333] to-transparent rounded mx-auto md:mx-0"></div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -86,43 +86,43 @@ const Skills = () => {
           {/* Education Section */}
           <div>
             <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-12 rounded-xl bg-[#0f172a] border border-slate-700/50 flex items-center justify-center text-primary shadow-inner">
+              <div className="w-12 h-12 rounded-xl bg-[#2b160a] border border-[#6b3e1b] flex items-center justify-center text-[#d4a373] shadow-inner">
                 <GraduationCap className="w-6 h-6" />
               </div>
-              <h3 className="text-2xl font-bold text-white">My Education</h3>
+              <h3 className="text-3xl font-bold text-sage-green-metal drop-shadow-md">My Education</h3>
             </div>
             
             <div className="space-y-6">
               {education.map((item, idx) => (
-                <div key={idx} className="glass p-6 rounded-2xl border-l-4 border-primary hover:translate-x-2 transition-transform duration-300">
-                  <span className="text-sm font-medium text-primary mb-2 block font-mono">{item.period}</span>
-                  <h4 className="text-lg font-bold text-white mb-1">{item.degree}</h4>
-                  <p className="text-slate-400 text-sm">{item.institution}</p>
+                <div key={idx} className="btn-leather p-6 rounded-md hover:translate-x-2 transition-transform duration-300">
+                  <span className="text-sm font-bold text-[#d4a373] mb-2 block tracking-wider uppercase relative z-10">{item.period}</span>
+                  <h4 className="text-xl font-bold text-rose-gold mb-1 relative z-10 drop-shadow-sm">{item.degree}</h4>
+                  <p className="text-off-white text-sm relative z-10 opacity-90">{item.institution}</p>
                 </div>
               ))}
             </div>
 
             {/* Certifications Section */}
             <div className="flex items-center gap-4 mt-12 mb-8">
-              <div className="w-12 h-12 rounded-xl bg-[#0f172a] border border-slate-700/50 flex items-center justify-center text-primary shadow-inner">
+              <div className="w-12 h-12 rounded-xl bg-[#2b160a] border border-[#6b3e1b] flex items-center justify-center text-[#d4a373] shadow-inner">
                 <BadgeCheck className="w-6 h-6" />
               </div>
-              <h3 className="text-2xl font-bold text-white">Certifications</h3>
+              <h3 className="text-3xl font-bold text-sage-green-metal drop-shadow-md">Certifications</h3>
             </div>
             
             <div className="space-y-6">
               {certifications.map((cert, idx) => (
-                <div key={idx} className="glass p-6 rounded-2xl border-l-4 border-primary hover:translate-x-2 transition-transform duration-300">
-                  <div className="mb-2">
-                    <span className="text-sm font-medium text-primary block font-mono">{cert.date}</span>
+                <div key={idx} className="btn-leather p-6 rounded-md hover:translate-x-2 transition-transform duration-300">
+                  <div className="mb-2 relative z-10">
+                    <span className="text-sm font-bold text-[#d4a373] block tracking-wider uppercase">{cert.date}</span>
                   </div>
-                  <h4 className="text-lg font-bold text-white mb-1">
-                    <a href={cert.link} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors inline-flex items-start gap-2 group">
+                  <h4 className="text-lg font-bold text-rose-gold mb-1 relative z-10 drop-shadow-sm">
+                    <a href={cert.link} target="_blank" rel="noopener noreferrer" className="hover:text-[#e0bfb8] transition-colors inline-flex items-start gap-2 group">
                       <span>{cert.title}</span>
-                      <ExternalLink className="w-4 h-4 mt-1 text-slate-400 group-hover:text-primary transition-colors flex-shrink-0" />
+                      <ExternalLink className="w-4 h-4 mt-1 text-[#d4a373] group-hover:text-rose-gold transition-colors flex-shrink-0" />
                     </a>
                   </h4>
-                  <p className="text-slate-400 text-sm">{cert.issuer}</p>
+                  <p className="text-off-white text-sm relative z-10 opacity-90">{cert.issuer}</p>
                 </div>
               ))}
             </div>
@@ -131,29 +131,29 @@ const Skills = () => {
           {/* Technical Skills Section */}
           <div>
             <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-12 rounded-xl bg-[#0f172a] border border-slate-700/50 flex items-center justify-center text-primary shadow-inner">
+              <div className="w-12 h-12 rounded-xl bg-[#2b160a] border border-[#6b3e1b] flex items-center justify-center text-[#d4a373] shadow-inner">
                 <Award className="w-6 h-6" />
               </div>
-              <h3 className="text-2xl font-bold text-white">Technical Skills</h3>
+              <h3 className="text-3xl font-bold text-sage-green-metal drop-shadow-md">Technical Skills</h3>
             </div>
             
             <div className="space-y-6">
               {skillCategories.map((category, idx) => (
-                <div key={idx} className="glass p-6 rounded-2xl">
-                  <h4 className="text-lg font-semibold text-white mb-6 flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-primary"></span>
+                <div key={idx} className="wood-frame p-6 sm:p-8">
+                  <h4 className="text-2xl font-bold text-off-white mb-6 flex items-center gap-3 drop-shadow-md relative z-10 border-b border-[#2a1610] pb-4">
+                    <span className="w-3 h-3 rounded-full btn-copper"></span>
                     {category.title}
                   </h4>
-                  <div className="space-y-5">
+                  <div className="space-y-5 relative z-10">
                     {category.skills.map((skill, sIdx) => (
                       <div key={sIdx}>
                         <div className="flex justify-between mb-2">
-                          <span className="text-sm font-medium text-slate-300">{skill.name}</span>
-                          <span className="text-sm font-medium text-slate-500">{skill.level}%</span>
+                          <span className="text-sm font-bold text-[#d4a373] tracking-wide uppercase shadow-sm">{skill.name}</span>
+                          <span className="text-sm font-bold text-rose-gold">{skill.level}%</span>
                         </div>
-                        <div className="w-full bg-slate-700/50 rounded-full h-1.5">
+                        <div className="w-full bg-[#1a0f08] border border-[#3b2211] rounded-sm h-2.5 shadow-inner">
                           <div
-                            className="bg-primary h-1.5 rounded-full transition-all duration-1000 ease-out"
+                            className="bg-gradient-to-r from-[#b87333] to-[#d4a373] h-full rounded-sm transition-all duration-1000 ease-out shadow-[0_0_5px_rgba(184,115,51,0.5)]"
                             style={{ width: `${skill.level}%` }}
                           ></div>
                         </div>
